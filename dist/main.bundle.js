@@ -137,7 +137,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <app-header></app-header>\n  </div>\n</div>\n\n<div class=\"container\">\n  <div class=\"row\" *ngIf=\"isSubscribed\">\n    <app-body-stepper></app-body-stepper>\n  </div>\n\n  <div class=\"row\" *ngIf=\"!isSubscribed\">\n    <app-body-activation\n      (isSubmited)=\"haveSubscribed($event)\"\n    ></app-body-activation>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <app-header></app-header>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"container\">\r\n  <div class=\"row\" *ngIf=\"isSubscribed\">\r\n    <app-body-stepper></app-body-stepper>\r\n  </div>\r\n\r\n  <div class=\"row\" *ngIf=\"!isSubscribed\">\r\n    <app-body-activation\r\n      (isSubmited)=\"haveSubscribed($event)\"\r\n    ></app-body-activation>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -231,7 +231,7 @@ var AppModule = (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_forms__["e" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_http__["c" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_forms__["j" /* ReactiveFormsModule */],
                 __WEBPACK_IMPORTED_MODULE_5__temp_material2_module__["a" /* MyCustomMaterialModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */]
@@ -262,7 +262,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".mat-card {\n  color: rgba(74,73,74,1.0);\n}\n", ""]);
+exports.push([module.i, ".mat-card {\r\n  color: rgba(74,73,74,1.0);\r\n}\r\n", ""]);
 
 // exports
 
@@ -328,7 +328,8 @@ var BodyActivationComponent = (function () {
         this.settingService.setSettings(this.activationData)
             .subscribe(function (response) {
             var data = response.json();
-            console.log('all settings:', data.result.sys_id);
+            // console.log('all settings:', data.result.sys_id);
+            _this.settings.changeSysId(data.result.sys_id);
         }, function (err) {
             console.log('some error:', err);
         });
@@ -377,7 +378,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".mat-stepper-horizontal, .mat-stepper-vertical {\n  background-color: #fff0;\n  color: rgba(74,73,74,1.0);\n}\n\ntable{\n  color: rgba(74, 73, 74, 0.84);\n  border: 3px solid rgba(0, 0, 0, 0)\n}\ntable th:nth-child(1){ width: 10% }\ntable th:nth-child(2){ width: 30% }\ntable th:nth-child(3){ width: 30% }\ntable th:nth-child(4){ width: 30% }\n\nth{\n  font-size: smaller;\n}\n\nform{\n  font-family: 'Source Sans Pro', Arial, Helvetica !important;\n  background-color: #ffffff;\n  color: rgba(74,73,74,1.0);\n  padding: 4rem;\n  margin: 20px 10px;\n  box-shadow: 0 1px 15px rgba(0,0,0,0.30), 0 2px 2px rgba(0,0,0,0.22);\n}\n\n.example-full-width{\n  width: 100%\n}\n\nbutton{\n  padding: 5px 2rem;\n}\n\n.device-item{\n  padding: 30px 10px;\n  border: 2px solid lightgray;\n  border-radius: 10px;\n  margin: 20px 0;\n  font-size: 1.3rem;\n}\n\n.description {\n  background: rgba(255,255,255,0.0);\n  height: auto;\n  width: auto;\n  margin: 0;\n  font-weight: 400;\n  font-style: normal;\n  font-size: 14.0px;\n  color: rgba(66,139,202,1.0);\n  line-height: 18.0px;\n  text-decoration: underline;\n  cursor: pointer;\n}\n\n.subscribed{\n  padding: 10px 15px;\n  border: 1px solid lightgreen;\n  margin: 20px 0;\n  line-height: 25px;\n  color: #54d154;\n  text-align: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n\nmat-list-item-content, .mat-list-item-content{\n  -webkit-box-orient: vertical!important;\n  -webkit-box-direction: normal!important;\n      -ms-flex-direction: column!important;\n          flex-direction: column!important;\n}\n\n.empty{\n  padding: 20px;\n  color: darkgray;\n  font-size: 2rem;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  font-weight: 600;\n}\n.empty i {\n  margin-right: 20px;\n}\n", ""]);
+exports.push([module.i, ".mat-stepper-horizontal, .mat-stepper-vertical {\r\n  background-color: #fff0;\r\n  color: rgba(74,73,74,1.0);\r\n}\r\n\r\ntable{\r\n  color: rgba(74, 73, 74, 0.84);\r\n  border: 3px solid rgba(0, 0, 0, 0)\r\n}\r\ntable th:nth-child(1){ width: 10% }\r\ntable th:nth-child(2){ width: 30% }\r\ntable th:nth-child(3){ width: 30% }\r\ntable th:nth-child(4){ width: 30% }\r\n\r\nth{\r\n  font-size: smaller;\r\n}\r\n\r\nform{\r\n  font-family: 'Source Sans Pro', Arial, Helvetica !important;\r\n  background-color: #ffffff;\r\n  color: rgba(74,73,74,1.0);\r\n  padding: 4rem;\r\n  margin: 20px 10px;\r\n  box-shadow: 0 1px 15px rgba(0,0,0,0.30), 0 2px 2px rgba(0,0,0,0.22);\r\n}\r\n\r\n.example-full-width{\r\n  width: 100%\r\n}\r\n\r\nbutton{\r\n  padding: 5px 2rem;\r\n}\r\n\r\n.device-item{\r\n  padding: 30px 10px;\r\n  border: 2px solid lightgray;\r\n  border-radius: 10px;\r\n  margin: 20px 0;\r\n  font-size: 1.3rem;\r\n}\r\n\r\n.description {\r\n  background: rgba(255,255,255,0.0);\r\n  height: auto;\r\n  width: auto;\r\n  margin: 0;\r\n  font-weight: 400;\r\n  font-style: normal;\r\n  font-size: 14.0px;\r\n  color: rgba(66,139,202,1.0);\r\n  line-height: 18.0px;\r\n  text-decoration: underline;\r\n  cursor: pointer;\r\n}\r\n\r\n.subscribed{\r\n  padding: 10px 15px;\r\n  border: 1px solid lightgreen;\r\n  margin: 20px 0;\r\n  line-height: 25px;\r\n  color: #54d154;\r\n  text-align: center;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\r\n}\r\n\r\nmat-list-item-content, .mat-list-item-content{\r\n  -webkit-box-orient: vertical!important;\r\n  -webkit-box-direction: normal!important;\r\n      -ms-flex-direction: column!important;\r\n          flex-direction: column!important;\r\n}\r\n\r\n.empty{\r\n  padding: 20px;\r\n  color: darkgray;\r\n  font-size: 2rem;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  font-weight: 600;\r\n}\r\n.empty i {\r\n  margin-right: 20px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -390,7 +391,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/body-stepper/body-stepper.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <h1 style=\"text-align: center\">App Setup</h1>\n  <p style=\"text-align: center\" class=\"col-md-6 col-md-offset-3\">\n    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum.\n  </p>\n</div>\n\n<div class=\"row\">\n  <mat-horizontal-stepper [linear]=\"isLinear\"   #stepper>\n\n\n\n    <mat-step [stepControl]=\"firstFormGroup\" [editable]=\"false\">\n      <form [formGroup]=\"firstFormGroup\">\n        <ng-template matStepLabel>API Activation</ng-template>\n        <h2 style=\"text-align: center\">API Activation</h2>\n        <b>Enter API Activation Token Code</b>\n        <p>It's a code, that has been sent to example@yourcompany.com\n          <br>\n          ( Format: TOKEN-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX )</p>\n\n        <mat-form-field class=\"example-full-width\">\n          <input\n            matInput\n            placeholder=\"Copy-paste code here\"\n            formControlName=\"firstCtrl\"\n            required\n            [(ngModel)]=\"token\"\n          >\n        </mat-form-field>\n\n        <div>\n          <button\n            mat-raised-button\n            color=\"primary\" style=\"width: 100%\"\n            (click)=\"checkToken()\"\n          >Activate</button>\n        </div>\n\n        <div *ngIf=\"goodToken\" class=\"subscribed\">\n          <i class=\"material-icons\">done</i>\n          <b>API has been activated</b>\n        </div>\n      </form>\n    </mat-step>\n\n    <mat-step [stepControl]=\"secondFormGroup\" [editable]=\"false\">\n      <form [formGroup]=\"secondFormGroup\">\n        <ng-template matStepLabel>Assign Roles</ng-template>\n        <h2 style=\"text-align: center\">Assign Roles</h2>\n        <div style=\"text-align: center\"  class=\"label1\">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus\n          sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.\n          <div class=\"description\">Advanced Role Configuration</div>\n        </div>\n\n        <p>\n        <b>Add role(s) that will be cofigured as “AT&T Service Manager” </b>\n        </p>\n\n        <!--<mat-form-field class=\"example-full-width\">-->\n          <!--<input matInput placeholder=\"Type role name ..\" formControlName=\"secondCtrl\" required>-->\n        <!--</mat-form-field>-->\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Type user name\" aria-label=\"State\" [matAutocomplete]=\"auto1\" formControlName=\"secondCtrl\">\n          <mat-autocomplete #auto1=\"matAutocomplete\">\n            <mat-option *ngFor=\"let role of roles\" [value]=\"role.name\">\n              <span>{{ role.name }}</span>\n            </mat-option>\n          </mat-autocomplete>\n        </mat-form-field>\n\n        <div>\n          <button mat-raised-button color=\"primary\" style=\"width: 100%\" matStepperNext>Assign</button>\n        </div>\n\n      </form>\n    </mat-step>\n\n    <mat-step [stepControl]=\"thirdFormGroup\" [editable]=\"false\">\n      <form [formGroup]=\"thirdFormGroup\">\n        <ng-template matStepLabel>Set Billing Details</ng-template>\n        <h2 style=\"text-align: center\">Set Billing Details</h2>\n        <div style=\"text-align: center\"  class=\"label1\">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus\n          sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.\n          <div class=\"description\">Configure Default Billing <Address></Address></div>\n        </div>\n\n        <br>\n        <b>Add contact person(s) </b>\n        <br>\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Street Address\" formControlName=\"thirdCtrl\" required>\n        </mat-form-field>\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Country / State\" formControlName=\"thirdCtrl\" required>\n        </mat-form-field>\n\n        <mat-form-field>\n          <textarea matInput placeholder=\"City\" matTextareaAutosize matAutosizeMinRows=\"2\"\n            matAutosizeMaxRows=\"5\"></textarea>\n        </mat-form-field>\n\n        <mat-form-field>\n          <textarea matInput placeholder=\"Zip Code\" matTextareaAutosize matAutosizeMinRows=\"2\"\n                    matAutosizeMaxRows=\"5\"></textarea>\n        </mat-form-field>\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Contact Person\" aria-label=\"State\" [matAutocomplete]=\"auto2\" formControlName=\"thirdCtrl\">\n          <mat-autocomplete #auto2=\"matAutocomplete\">\n            <mat-option *ngFor=\"let user of users\" [value]=\"user.name\">\n              <span>{{ user.name }}</span>\n            </mat-option>\n          </mat-autocomplete>\n        </mat-form-field>\n\n        <div>\n          <button mat-raised-button color=\"primary\" style=\"width: 100%\" matStepperNext>Assign</button>\n        </div>\n\n      </form>\n    </mat-step>\n\n    <mat-step [stepControl]=\"fourthFormGroup\" [editable]=\"false\">\n      <form [formGroup]=\"fourthFormGroup\">\n        <ng-template matStepLabel>Set-up Catalog</ng-template>\n        <h2 style=\"text-align: center\">Set-up Catalog</h2>\n        <div style=\"text-align: center\"  class=\"label1\">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus\n          sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.\n          <div class=\"description\">Advanced Configuration<Address></Address></div>\n        </div>\n\n        <p>\n          <b>Add devices to the list</b>\n        </p>\n        <div *ngIf=\"devices.length == 0\" class=\"device-item empty\">\n          <i class=\"material-icons\">pets</i>\n          <p>Not selected yet</p>\n        </div>\n        <mat-list>\n          <mat-list-item *ngFor=\"let item of devices; let i = index\" class=\"device-item\">\n            <table style=\"width: 100%\">\n              <tr>\n                <th rowspan=\"2\">\n                  <span class=\"device-img\">\n                    <i class=\"material-icons\">developer_mode</i>\n                  </span>\n                </th>\n                <th>NAME</th>\n                <th>SKU</th>\n                <th>PRICE</th>\n              </tr>\n              <tr>\n                <td>{{ item.name }}</td>\n                <td>{{ item.sku }}</td>\n                <td>{{ item.price }}</td>\n              </tr>\n              <tr>\n                <td colspan=\"3\" style=\"padding-top: 15px;\">\n                  {{ item.plans.rate.length }} plans and .. features avaliable\n                  <span class=\"description\" (click)=\"openDialog(item)\">Configure</span>\n                </td>\n                <td style=\"text-align: right\">\n                  <i\n                    (click)=\"removeDevice(i)\"\n                    class=\"material-icons\"\n                    style=\"cursor: pointer\"\n                  >delete</i>\n                </td>\n              </tr>\n            </table>\n          </mat-list-item>\n\n        </mat-list>\n\n        <br>\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Type SKU or device name\" aria-label=\"device list\" [matAutocomplete]=\"auto3\" formControlName=\"fourthCtrl\">\n          <mat-autocomplete #auto3=\"matAutocomplete\">\n\n            <mat-option\n              *ngFor=\"let device of catalogDevices; let i = index\"\n              (click)=\"chooseDevice(device)\"\n              [value]=\"device.name\"\n            >\n              <span>\n                <img [src]=\"device.image\" style=\"max-width: 50px; max-height: 50px; height: auto;\"></span>\n              <span>{{ device.name }}  ({{ device.sku }})</span>\n            </mat-option>\n\n          </mat-autocomplete>\n        </mat-form-field>\n      </form>\n    </mat-step>\n\n\n\n  </mat-horizontal-stepper>\n</div>\n"
+module.exports = "<div class=\"row\">\n  <h1 style=\"text-align: center\">App Setup</h1>\n  <p style=\"text-align: center\" class=\"col-md-6 col-md-offset-3\">\n    Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum.\n  </p>\n</div>\n\n<div class=\"row\">\n  <mat-horizontal-stepper [linear]=\"isLinear\"   #stepper>\n\n\n\n    <mat-step [stepControl]=\"firstFormGroup\" [editable]=\"false\">\n      <form [formGroup]=\"firstFormGroup\">\n        <ng-template matStepLabel>API Activation</ng-template>\n        <h2 style=\"text-align: center\">API Activation</h2>\n        <b>Enter API Activation Token Code</b>\n        <p>It's a code, that has been sent to example@yourcompany.com\n          <br>\n          ( Format: TOKEN-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX )</p>\n\n        <mat-form-field class=\"example-full-width\">\n          <input\n            matInput\n            placeholder=\"Copy-paste code here\"\n            formControlName=\"firstCtrl\"\n            required\n            [(ngModel)]=\"token\"\n          >\n        </mat-form-field>\n\n        <div>\n          <button\n            mat-raised-button\n            color=\"primary\" style=\"width: 100%\"\n            (click)=\"checkToken()\"\n          >Activate</button>\n        </div>\n\n        <div *ngIf=\"goodToken\" class=\"subscribed\">\n          <i class=\"material-icons\">done</i>\n          <b>API has been activated</b>\n        </div>\n      </form>\n    </mat-step>\n\n    <mat-step [stepControl]=\"secondFormGroup\" [editable]=\"false\">\n      <form [formGroup]=\"secondFormGroup\">\n        <ng-template matStepLabel>Assign Roles</ng-template>\n        <h2 style=\"text-align: center\">Assign Roles</h2>\n        <div style=\"text-align: center\"  class=\"label1\">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus\n          sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.\n          <div class=\"description\">Advanced Role Configuration</div>\n        </div>\n\n        <p>\n          <b>Add role(s) that will be cofigured as “AT&T Service Manager” </b>\n        </p>\n\n        <!--<mat-form-field class=\"example-full-width\">-->\n        <!--<input matInput placeholder=\"Type role name ..\" formControlName=\"secondCtrl\" required>-->\n        <!--</mat-form-field>-->\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Type user name\" aria-label=\"State\" [matAutocomplete]=\"auto1\" formControlName=\"secondCtrl\">\n          <mat-autocomplete #auto1=\"matAutocomplete\">\n            <mat-option *ngFor=\"let role of roles\" [value]=\"role.name\">\n              <span>{{ role.name }}</span>\n            </mat-option>\n          </mat-autocomplete>\n        </mat-form-field>\n\n        <div>\n          <button mat-raised-button color=\"primary\" style=\"width: 100%\" matStepperNext>Assign</button>\n        </div>\n\n      </form>\n    </mat-step>\n\n    <mat-step [stepControl]=\"thirdFormGroup\" [editable]=\"false\">\n      <form [formGroup]=\"thirdFormGroup\">\n        <ng-template matStepLabel>Set Billing Details</ng-template>\n        <h2 style=\"text-align: center\">Set Billing Details</h2>\n        <div style=\"text-align: center\"  class=\"label1\">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus\n          sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.\n          <div class=\"description\">Configure Default Billing <Address></Address></div>\n        </div>\n\n        <br>\n        <b>Add contact person(s) </b>\n        <br>\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Street Address\" formControlName=\"thirdCtrl\" required>\n        </mat-form-field>\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Country / State\" formControlName=\"thirdCtrl\" required>\n        </mat-form-field>\n\n        <mat-form-field>\n          <textarea matInput placeholder=\"City\" matTextareaAutosize matAutosizeMinRows=\"2\"\n                    matAutosizeMaxRows=\"5\"></textarea>\n        </mat-form-field>\n\n        <mat-form-field>\n          <textarea matInput placeholder=\"Zip Code\" matTextareaAutosize matAutosizeMinRows=\"2\"\n                    matAutosizeMaxRows=\"5\"></textarea>\n        </mat-form-field>\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Contact Person\" aria-label=\"State\" [matAutocomplete]=\"auto2\" formControlName=\"thirdCtrl\">\n          <mat-autocomplete #auto2=\"matAutocomplete\">\n            <mat-option *ngFor=\"let user of users\" [value]=\"user.name\">\n              <span>{{ user.name }}</span>\n            </mat-option>\n          </mat-autocomplete>\n        </mat-form-field>\n\n        <div>\n          <button mat-raised-button color=\"primary\" style=\"width: 100%\" matStepperNext>Assign</button>\n        </div>\n\n      </form>\n    </mat-step>\n\n    <mat-step [stepControl]=\"fourthFormGroup\" [editable]=\"false\">\n      <form [formGroup]=\"fourthFormGroup\">\n        <ng-template matStepLabel>Set-up Catalog</ng-template>\n        <h2 style=\"text-align: center\">Set-up Catalog</h2>\n        <div style=\"text-align: center\"  class=\"label1\">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus\n          sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.\n          <div class=\"description\">Advanced Configuration<Address></Address></div>\n        </div>\n\n        <p>\n          <b>Add devices to the list</b>\n        </p>\n        <div *ngIf=\"devices.length == 0\" class=\"device-item empty\">\n          <i class=\"material-icons\">pets</i>\n          <p>Not selected yet</p>\n        </div>\n        <mat-list>\n          <mat-list-item *ngFor=\"let item of devices; let i = index\" class=\"device-item\">\n            <table style=\"width: 100%\">\n              <tr>\n                <th rowspan=\"2\">\n                  <span class=\"device-img\">\n                    <i class=\"material-icons\">developer_mode</i>\n                  </span>\n                </th>\n                <th>NAME</th>\n                <th>SKU</th>\n                <th>PRICE</th>\n              </tr>\n              <tr>\n                <td>{{ item.name }}</td>\n                <td>{{ item.sku }}</td>\n                <td>{{ item.price }}</td>\n              </tr>\n              <tr>\n                <td colspan=\"3\" style=\"padding-top: 15px;\">\n                  {{ item.plans.rate.length }} plans and .. features avaliable\n                  <span class=\"description\" (click)=\"openDialog(item)\">Configure</span>\n                </td>\n                <td style=\"text-align: right\">\n                  <i\n                    (click)=\"removeDevice(i)\"\n                    class=\"material-icons\"\n                    style=\"cursor: pointer\"\n                  >delete</i>\n                </td>\n              </tr>\n            </table>\n          </mat-list-item>\n\n        </mat-list>\n\n        <br>\n\n        <mat-form-field class=\"example-full-width\">\n          <input matInput placeholder=\"Type SKU or device name\" aria-label=\"device list\" [matAutocomplete]=\"auto3\" formControlName=\"fourthCtrl\">\n          <mat-autocomplete #auto3=\"matAutocomplete\">\n\n            <mat-option\n              *ngFor=\"let device of catalogDevices; let i = index\"\n              (click)=\"chooseDevice(device)\"\n              [value]=\"device.name\"\n            >\n              <span>\n                <img [src]=\"device.image\" style=\"max-width: 50px; max-height: 50px; height: auto;\"></span>\n              <span>{{ device.name }}  ({{ device.sku }})</span>\n            </mat-option>\n\n          </mat-autocomplete>\n        </mat-form-field>\n      </form>\n    </mat-step>\n\n\n\n  </mat-horizontal-stepper>\n</div>\n"
 
 /***/ }),
 
@@ -507,7 +508,7 @@ var BodyStepperComponent = (function () {
             .subscribe(function (response) {
             var data = response.json();
             // console.log('all settings:', data.result[0].data);
-            _this.catalog = JSON.parse(data.result[0].data);
+            _this.catalog = JSON.parse(data.result[0].catalog);
             // console.log('sku11460700036:', this.catalog);
             // this.catalog = data.result;
             _this.createCatalogs();
@@ -595,7 +596,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".plan-item{\n  padding: 20px 20px;\n  margin: 10px 0;\n  border: 2px solid lightgray;\n  border-radius: 10px;\n  color: rgba(74,73,74,1.0);\n  font-family: 'Source Sans Pro';\n}\n\n.mat-checkbox{\n  margin-left: 30px;\n  font-size: smaller;\n  font-family: 'Source Sans Pro';\n}\n\n.mat-radio-button{\n  margin-bottom: 10px;\n  font-family: 'Source Sans Pro';\n}\n\n.mat-radio-button span{\n  padding: 0 30px;\n}\n\n.mat-checkbox span{\n  padding: 0 35px;\n}\n", ""]);
+exports.push([module.i, ".plan-item{\r\n  padding: 20px 20px;\r\n  margin: 10px 0;\r\n  border: 2px solid lightgray;\r\n  border-radius: 10px;\r\n  color: rgba(74,73,74,1.0);\r\n  font-family: 'Source Sans Pro';\r\n}\r\n\r\n.mat-checkbox{\r\n  margin-left: 30px;\r\n  font-size: smaller;\r\n  font-family: 'Source Sans Pro';\r\n}\r\n\r\n.mat-radio-button{\r\n  margin-bottom: 10px;\r\n  font-family: 'Source Sans Pro';\r\n}\r\n\r\n.mat-radio-button span{\r\n  padding: 0 30px;\r\n}\r\n\r\n.mat-checkbox span{\r\n  padding: 0 35px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -709,7 +710,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "p{    text-align: center;\n  font-size: small;\n  font-weight: 800;\n  color: #939596;\n}\n", ""]);
+exports.push([module.i, "p{    text-align: center;\r\n  font-size: small;\r\n  font-weight: 800;\r\n  color: #939596;\r\n}\r\n", ""]);
 
 // exports
 
@@ -722,7 +723,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-logo></app-logo>\n<p>AT&T PREMIER APP</p>\n\n"
+module.exports = "<app-logo></app-logo>\r\n<p>AT&T PREMIER APP</p>\r\n\r\n"
 
 /***/ }),
 
@@ -783,7 +784,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/header/logo/logo.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-md-2 col-md-offset-5\">\n    <div class=\"visual\">\n      <div class=\"group2\">\n        <div class=\"bg\"></div>\n        <div class=\"icshoppingcart24px\"><img class=\"image2\"\n                                             src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedshape  2.png\"\n                                             anima-src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedshape  2.png\"><img\n          class=\"image3\"\n          src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedshape  8.png\"\n          anima-src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedshape  8.png\">\n        </div>\n      </div>\n\n\n      <div class=\"group3\">\n        <div class=\"view4\"></div>\n        <img class=\"bitmap\"\n             src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedbitmap.png\"\n             anima-src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedbitmap.png\">\n      </div>\n\n      <div class=\"view1\">\n        <div class=\"view2\"></div>\n        <div class=\"view3\"><img class=\"image4\"\n                                src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedshape  8.png\"\n                                anima-src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedshape  8.png\"><img\n          class=\"image5\"\n          src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedshape  5.png\"\n          anima-src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedshape  5.png\">\n        </div>\n      </div>\n\n\n    </div>\n  </div>\n\n</div>\n"
+module.exports = "<div class=\"row\">\r\n  <div class=\"col-md-2 col-md-offset-5\">\r\n    <div class=\"visual\">\r\n      <div class=\"group2\">\r\n        <div class=\"bg\"></div>\r\n        <div class=\"icshoppingcart24px\"><img class=\"image2\"\r\n                                             src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedshape  2.png\"\r\n                                             anima-src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedshape  2.png\"><img\r\n          class=\"image3\"\r\n          src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedshape  8.png\"\r\n          anima-src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedshape  8.png\">\r\n        </div>\r\n      </div>\r\n\r\n\r\n      <div class=\"group3\">\r\n        <div class=\"view4\"></div>\r\n        <img class=\"bitmap\"\r\n             src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedbitmap.png\"\r\n             anima-src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedbitmap.png\">\r\n      </div>\r\n\r\n      <div class=\"view1\">\r\n        <div class=\"view2\"></div>\r\n        <div class=\"view3\"><img class=\"image4\"\r\n                                src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedshape  8.png\"\r\n                                anima-src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedshape  8.png\"><img\r\n          class=\"image5\"\r\n          src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedshape  5.png\"\r\n          anima-src=\"https://anima-uploads.s3.amazonaws.com/59ca10d54309b8000ded7e76/59faeea7764d0a000ce02c4f/59faeea8764d0a000b2dd052/img/att get startedshape  5.png\">\r\n        </div>\r\n      </div>\r\n\r\n\r\n    </div>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -859,55 +860,40 @@ var SettingService = (function () {
         // return x.json()
     };
     SettingService.prototype.createAuthorizationHeader = function (headers) {
+        // headers.append('Authorization', 'Basic ' +
+        //   btoa('admin:admin')
+        // );
     };
     SettingService.prototype.checkActivation = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        this.createAuthorizationHeader(headers);
-        return this.http.get('/api/now/table/x_mobi_aom_att_global_settings?sysparm_fields=sys_id%2Cis_activated&sysparm_limit=1');
+        return this.http
+            .get('/api/now/table/x_mobi_aom_att_global_settings?sysparm_fields=sys_id%2Cis_activated&sysparm_limit=1');
     };
     SettingService.prototype.getSettings = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        this.createAuthorizationHeader(headers);
-        return this.http.get('/api/now/table/x_mobi_aom_att_global_settings?sysparm_fields=account_number%2Ccustomer_email%2Ccompany_name%2Ccustomer_name&sysparm_limit=1', {
-            headers: headers
-        })
+        return this.http.get('/api/now/table/x_mobi_aom_att_global_settings?sysparm_fields=account_number%2Ccustomer_email%2Ccompany_name%2Ccustomer_name&sysparm_limit=1')
             .map(function (response) { return response.json(); });
     };
     SettingService.prototype.setSettings = function (settings) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        this.createAuthorizationHeader(headers);
         return this.http.post('/api/now/table/x_mobi_aom_att_global_settings', {
             'account_number': settings.accountNumber,
             'company_name': settings.companyName,
             'customer_name': settings.customerName,
             'customer_email': settings.customerEmail,
             'is_activated': true
-        }, {
-            headers: headers
         });
     };
     SettingService.prototype.setToken = function (token, sys_id) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        this.createAuthorizationHeader(headers);
         return this.http.put('/api/now/table/x_mobi_aom_att_global_settings/'
             + sys_id +
             '?sysparm_fields=', {
             'token_api': token
-        }, {
-            headers: headers
         });
     };
     SettingService.prototype.getCatalog = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        this.createAuthorizationHeader(headers);
-        return this.http.get('/api/now/table/x_mobi_aom_att_global_settings?sysparm_fields=data&sysparm_limit=1', {
-            headers: headers
-        });
-        // .map(response => response.json());
+        return this.http.get('/api/now/table/x_mobi_aom_jsonfordevice?sysparm_fields=catalog&sysparm_limit=1');
     };
     SettingService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
     ], SettingService);
     return SettingService;
 }());
@@ -948,27 +934,24 @@ var UserService = (function () {
         this.messageSource.next(message);
     };
     UserService.prototype.createAuthorizationHeader = function (headers) {
+        // headers.append('Authorization', 'Basic ' +
+        //   btoa('admin:admin')
+        // );
     };
     ;
     UserService.prototype.getUsers = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        this.createAuthorizationHeader(headers);
-        return this.http.get('/api/now/table/sys_user?sysparm_limit=10', {
-            headers: headers
-        })
+        // const headers = new Headers();
+        // this.createAuthorizationHeader(headers);
+        return this.http.get('/api/now/table/sys_user?sysparm_limit=10')
             .map(function (response) { return response.json(); });
     };
     UserService.prototype.getRoles = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        this.createAuthorizationHeader(headers);
-        return this.http.get('/api/now/table/sys_user_group?sysparm_limit=10', {
-            headers: headers
-        })
+        return this.http.get('/api/now/table/sys_user_group?sysparm_limit=10')
             .map(function (response) { return response.json(); });
     };
     UserService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
     ], UserService);
     return UserService;
 }());
